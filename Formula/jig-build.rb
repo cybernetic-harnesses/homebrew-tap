@@ -1,8 +1,8 @@
 class JigBuild < Formula
   desc "Operator knowledge compiler for agentic systems"
   homepage "https://github.com/cybernetic-harnesses/jig"
-  url "https://github.com/cybernetic-harnesses/jig/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  url "https://files.pythonhosted.org/packages/ce/69/41a4fc27b720577f6b8016d9f43f8a243f34350c3d55e14365620041a66d/jig_build-2026.6.27-py3-none-any.whl"
+  sha256 "6360854d25968fc4c6b18ca469b8227e56df3952e309e2dc292146529901769e"
 
   depends_on "python@3.12"
 
@@ -10,7 +10,7 @@ class JigBuild < Formula
     python3 = Formula["python@3.12"].opt_bin/"python3.12"
     venv = libexec
     system python3, "-m", "venv", venv
-    system venv/"bin/pip", "install", "--no-cache-dir", buildpath
+    system venv/"bin/pip", "install", "--no-cache-dir", "jig-build==2026.6.27"
     bin.install_symlink venv/"bin/jig-build"
   end
 
